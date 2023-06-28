@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Cart</title>
+       
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+  </head>
+  <body>
+  
+    <section class="products">
+      <div class="row">
+        <div class="col-xl-4">
+          <button class="company-btn" onclick="sortdata('asc')">Asc</button>
+        </div>
+        <div class="col-xl-4">
+          <button class="company-btn" onclick="sortdata('dsc')">DSC</button>
+        </div>
+        <div class="col-xl-4">
+          <div class="row text-end">
+            <div class="col-xl-12">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="Cart" onclick="displayCart()">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">My Cart</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table" id="CartInfo">
+                        <thead>
+                          <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">P*Q</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>                            
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Understood</button> -->
+                      <div class="text-dark">
+                        <i class="fa fa-dollar-sign"></i><span id="totPrice"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </section>
+        
+      
+    <!-- products -->
+    <section class="products">
+  
+        <!-- filters -->
+        <div class="filters-container">
+          <!-- search -->
+          <form class="input-form">
+            <input type="text" class="search-input" placeholder="search..." id="searchTerm" onchange="filterProduct()"/>
+          </form>
+          <!-- categories -->
+          <h5>Company</h5>
+          <article class="companies" id="companies">
+            <button class="company-btn">all</button>       
+          </article>
+        </div>
+        <!-- products -->
+        <div class="products-container" id="products">
+          <!-- single product -->
+          <article class="product">
+            <img
+              src="https://dl.airtable.com/.attachments/14ac9e946e1a02eb9ce7d632c83f742f/4fd98e64/product-1.jpeg"
+              class="product-img img"
+              alt=""
+            />
+            <footer>
+              <h5 class="product-name">high-back bench</h5>
+              <span class="product-price">$9.99</span>
+              <span><button type="button" class="btn btn-secondary btn-sm" title="add to cart" onclick="addToCart(0)"> Add To Cart</button></span>
+            </footer>
+          </article>       
+        </div>
+  
+    </section>
+      
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/products.js"></script>
+  </body>
+</html>
